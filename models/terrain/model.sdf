@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.6">
+  <model name="fortress_heightmap">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <use_terrain_paging>false</use_terrain_paging>
+            <sampling>1 1</sampling>
+            <texture>
+              <diffuse>materials/textures/dirt_diffusespecular.png</diffuse>
+              <normal>materials/textures/flat_normal.png</normal>
+              <size>10</size>
+            </texture>
+            <texture>
+              <diffuse>materials/textures/grass_diffusespecular.png</diffuse>
+              <normal>materials/textures/flat_normal.png</normal>
+              <size>10</size>
+            </texture>
+            <texture>
+              <diffuse>materials/textures/fungus_diffusespecular.png</diffuse>
+              <normal>materials/textures/flat_normal.png</normal>
+              <size>10</size>
+            </texture>
+            <blend>
+              <min_height>1</min_height>
+              <fade_dist>3</fade_dist>
+            </blend>
+            <blend>
+              <min_height>10</min_height>
+              <fade_dist>3</fade_dist>
+            </blend>
+            <uri>heightmaps/heightmap.png</uri>
+            <size>257 257 50</size>
+            <pos>0 0 0</pos>
+          </heightmap>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <heightmap>
+            <use_terrain_paging>false</use_terrain_paging>
+            <sampling>1 1</sampling>
+            <uri>heightmaps/heightmap.png</uri>
+            <size>257 257 50</size>
+            <pos>0 0 0</pos>
+          </heightmap>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>1e6</kp>
+              <kd>1e3</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>

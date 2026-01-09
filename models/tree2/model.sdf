@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="tree2">
+    <static>true</static>
+    <link name="tree_link">
+
+      <visual name="tree_visual">
+        <geometry>
+          <mesh>
+            <uri>model://tree2/meshes/tree_mesh.dae</uri>
+          </mesh>
+        </geometry>
+            <material>
+              <ambient>0.5 0.3 0.1 1</ambient>
+              <diffuse>0.6 0.4 0.2 1</diffuse>
+              <specular>0.2 0.1 0.05 1</specular>
+              <emissive>0 0 0 1</emissive>
+            </material>
+          </visual>
+      <collision name="tree_collision">
+        <geometry>
+          <mesh>
+            <uri>model://tree2/meshes/tree_collision.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

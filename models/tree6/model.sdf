@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="tree6">
+    <static>true</static>
+    <link name="tree_link">
+
+      <visual name="tree_visual">
+        <geometry>
+          <mesh>
+            <uri>model://tree6/meshes/tree_mesh.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="tree_collision">
+        <geometry>
+          <mesh>
+            <uri>model://tree6/meshes/tree_collision.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,13 @@
+Usage example:
+python3 update_terrain.py --heightmap heightmap.png --height_range 50 --blend1_min 1 --blend1_fade 3 --blend2_min 10 --blend2_fade 3 --pos_x 0 --pos_y 0 --pos_z 0
+
+Parameters:
+--heightmap: Heightmap image file name.
+--height_range: The height range value for the terrain.
+--blend1_min: The minimum height for the first blend layer.
+--blend1_fade: The fade distance for the first blend layer.
+--blend2_min: The minimum height for the second blend layer.
+--blend2_fade: The fade distance for the second blend layer.
+--pos_x: The X coordinate for the terrain position.
+--pos_y: The Y coordinate for the terrain position.
+--pos_z: The Z coordinate for the terrain position.
