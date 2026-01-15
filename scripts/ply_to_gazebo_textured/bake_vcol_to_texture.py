@@ -2,16 +2,18 @@ import bpy
 import sys
 import os
 
+
 def arg_after(flag, default=None):
     argv = sys.argv
     if "--" not in argv:
         return default
-    argv = argv[argv.index("--") + 1:]
+    argv = argv[argv.index("--") + 1 :]
     if flag in argv:
         i = argv.index(flag)
         if i + 1 < len(argv):
             return argv[i + 1]
     return default
+
 
 in_mesh = arg_after("--in")
 out_dae = arg_after("--out_dae")
@@ -89,10 +91,16 @@ img.file_format = "PNG"
 avg_color = [0.5, 0.5, 0.5, 1.0]
 try:
     cols = []
-    if hasattr(mesh, "color_attributes") and vcol_name and vcol_name in mesh.color_attributes:
+    if (
+        hasattr(mesh, "color_attributes")
+        and vcol_name
+        and vcol_name in mesh.color_attributes
+    ):
         ca = mesh.color_attributes[vcol_name]
         cols = [c.color[:3] for c in ca.data]
-    elif hasattr(mesh, "vertex_colors") and vcol_name and vcol_name in mesh.vertex_colors:
+    elif (
+        hasattr(mesh, "vertex_colors") and vcol_name and vcol_name in mesh.vertex_colors
+    ):
         vc = mesh.vertex_colors[vcol_name]
         cols = [c.color[:3] for c in vc.data]
     if cols:

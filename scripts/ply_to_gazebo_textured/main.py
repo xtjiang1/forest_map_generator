@@ -3,7 +3,6 @@ import subprocess
 import numpy as np
 import open3d as o3d
 
-INPUT_DIR = "trees_ply"
 TARGET_POINTS = 550000
 VISUAL_MAX_TRIANGLES = 25000
 COLLISION_MAX_TRIANGLES = 5000
@@ -12,17 +11,25 @@ BLENDER_BIN = "blender"
 TEX_SIZE = 2048
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_DIR = os.path.join(SCRIPT_DIR, "trees_ply")
 BAKE_SCRIPT = os.path.join(SCRIPT_DIR, "bake_vcol_to_texture.py")
+
 
 def run_blender_bake(in_colored_ply, out_dae, out_png):
     cmd = [
-        BLENDER_BIN, "-b",
-        "-P", BAKE_SCRIPT,
+        BLENDER_BIN,
+        "-b",
+        "-P",
+        BAKE_SCRIPT,
         "--",
-        "--in", in_colored_ply,
-        "--out_dae", out_dae,
-        "--out_png", out_png,
-        "--tex", str(TEX_SIZE),
+        "--in",
+        in_colored_ply,
+        "--out_dae",
+        out_dae,
+        "--out_png",
+        out_png,
+        "--tex",
+        str(TEX_SIZE),
     ]
     print("Running Blender bake:", " ".join(cmd))
     r = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -32,7 +39,10 @@ def run_blender_bake(in_colored_ply, out_dae, out_png):
     print(r.stdout.strip())
     return True
 
-def process_ply_file(input_path, out_textured_dae, out_albedo_png, out_stl, base_name, meshes_dir):
+
+def process_ply_file(
+    input_path, out_textured_dae, out_albedo_png, out_stl, base_name, meshes_dir
+):
     if not os.path.exists(input_path):
         print(f"Error: File not found: {input_path}")
         return False
@@ -53,7 +63,9 @@ def process_ply_file(input_path, out_textured_dae, out_albedo_png, out_stl, base
     points_np[:, 2] -= min_z
 
     pcd.points = o3d.utility.Vector3dVector(points_np)
-    print(f"Tree aligned: base Z=0, XY centered. orig center={centroid_xy}, orig minZ={min_z}")
+    print(
+        f"Tree aligned: base Z=0, XY centered. orig center={centroid_xy}, orig minZ={min_z}"
+    )
 
     if len(pcd.points) > TARGET_POINTS:
         print(f"Downsampling to {TARGET_POINTS} points...")
@@ -125,7 +137,9 @@ def process_ply_file(input_path, out_textured_dae, out_albedo_png, out_stl, base
     visual_mesh.remove_degenerate_triangles()
     visual_mesh.remove_unreferenced_vertices()
 
-    print(f"Final visual mesh: {len(visual_mesh.vertices)} verts, {len(visual_mesh.triangles)} tris")
+    print(
+        f"Final visual mesh: {len(visual_mesh.vertices)} verts, {len(visual_mesh.triangles)} tris"
+    )
 
     colored_ply = os.path.join(meshes_dir, f"{base_name}_visual_colored.ply")
     ok = o3d.io.write_triangle_mesh(colored_ply, visual_mesh, write_ascii=False)
@@ -161,6 +175,7 @@ def process_ply_file(input_path, out_textured_dae, out_albedo_png, out_stl, base
 
     return True
 
+
 def main():
     if not os.path.isdir(INPUT_DIR):
         print("INPUT_DIR not found:", INPUT_DIR)
@@ -171,7 +186,7 @@ def main():
         print("No .ply files found in:", INPUT_DIR)
         return
 
-    pkg_root = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+    pkg_root = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
     models_dir = os.path.join(pkg_root, "models")
 
     for ply_file in ply_files:
@@ -188,14 +203,10 @@ def main():
 
         print(f"\n=== Processing {ply_file} -> {meshes_dir} ===")
         success = process_ply_file(
-            input_path,
-            out_textured_dae,
-            out_albedo_png,
-            out_stl,
-            base_name,
-            meshes_dir
+            input_path, out_textured_dae, out_albedo_png, out_stl, base_name, meshes_dir
         )
         print(("OK" if success else "FAILED"), ply_file)
+
 
 if __name__ == "__main__":
     main()

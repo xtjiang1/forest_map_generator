@@ -5,77 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d3009a1-cfc9-4f3e-999e-49c5d64a71b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../models/terrain/heightmaps/fortress_heightmap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../models/terrain/heightmaps/heightmap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../models/terrain/heightmaps/update_heightmap.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../models/terrain/heightmaps/update_heightmap_help.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scripts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scripts.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bake_vcol_to_texture.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test1_albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test1_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test1_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test1_visual_colored.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree10_albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree10_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree10_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree10_visual_colored.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree11_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree11_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree12_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree12_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree13_albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree13_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree13_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree13_visual_colored.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree14_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree14_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree1_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree2_albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree2_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree2_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree2_visual_colored.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree3_albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree3_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree3_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree3_visual_colored.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree4_albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree4_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree4_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree4_visual_colored.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree5_albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree5_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree5_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree5_visual_colored.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree6_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree6_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree7_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree7_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree8_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree8_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree9_albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree9_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree9_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tree9_visual_colored.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ply_to_gazebo_textured.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tree1.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tree_collision.stl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tree_mesh.dae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree1.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree10.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree11.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree12.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree13.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree14.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree2.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree3.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree4.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree5.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree6.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree7.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree8.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees_ply/tree9.ply" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ply_to_gazebo_textured/bake_vcol_to_texture.py" beforeDir="false" afterPath="$PROJECT_DIR$/ply_to_gazebo_textured/bake_vcol_to_texture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ply_to_gazebo_textured/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ply_to_gazebo_textured/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,26 +16,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "xtjiang1"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;xtjiang1&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/xtjiang1/forest_map_generator.git",
-    "accountId": "ef80828b-a854-4caf-925d-ed244241974f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/xtjiang1/forest_map_generator.git&quot;,
+    &quot;accountId&quot;: &quot;ef80828b-a854-4caf-925d-ed244241974f&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="38J9H46sDPMc1XKC4nmjmYZnd3q" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -120,7 +51,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "fix/heightmap",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -178,6 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1768506716524</updated>
       <workItem from="1768506718020" duration="824000" />
+      <workItem from="1768508553137" duration="13000" />
     </task>
     <servers />
   </component>
