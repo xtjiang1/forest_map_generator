@@ -1,1 +1,3 @@
-# forest_map_generator
+# Forest Map Generator
+
+![](docs/images/gazebo_overview.png)
