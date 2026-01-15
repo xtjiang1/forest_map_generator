@@ -208,6 +208,7 @@ setup(
         "console_scripts": [
             "forest_map_generator = forest_map_generator.forest_map_generator:main",
             "update_heightmap = forest_map_generator.update_heightmap:main",
+            "ply_to_gazebo_textured_mesh = forest_map_generator.ply_to_gazebo_textured:main",
         ],
     },
 )

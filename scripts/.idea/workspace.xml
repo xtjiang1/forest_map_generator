@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d3009a1-cfc9-4f3e-999e-49c5d64a71b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../models/terrain/heightmaps/fortress_heightmap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/terrain/heightmaps/heightmap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/terrain/heightmaps/update_heightmap.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/terrain/heightmaps/update_heightmap_help.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scripts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scripts.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bake_vcol_to_texture.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/test1_albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/test1_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/test1_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/test1_visual_colored.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree10_albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree10_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree10_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree10_visual_colored.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree11_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree11_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree12_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree12_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree13_albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree13_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree13_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree13_visual_colored.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree14_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree14_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree1_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree2_albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree2_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree2_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree2_visual_colored.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree3_albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree3_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree3_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree3_visual_colored.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree4_albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree4_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree4_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree4_visual_colored.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree5_albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree5_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree5_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree5_visual_colored.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree6_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree6_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree7_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree7_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree8_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree8_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree9_albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree9_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree9_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tree9_visual_colored.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ply_to_gazebo_textured.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree1.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_collision.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_mesh.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree1.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree10.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree11.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree12.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree13.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree14.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree2.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree3.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree4.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree5.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree6.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree7.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree8.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees_ply/tree9.ply" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../setup.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "xtjiang1"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/xtjiang1/forest_map_generator.git",
+    "accountId": "ef80828b-a854-4caf-925d-ed244241974f"
+  }
+}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="38J9H46sDPMc1XKC4nmjmYZnd3q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "fix/heightmap",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="scripts" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/update_heightmap" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/update_heightmap/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.29346.308" />
+        <option value="bundled-python-sdk-ca5e2b39c7df-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.308" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d3009a1-cfc9-4f3e-999e-49c5d64a71b0" name="Changes" comment="" />
+      <created>1768506716524</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768506716524</updated>
+      <workItem from="1768506718020" duration="824000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/scripts$main.coverage" NAME="main Coverage Results" MODIFIED="1768507540140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/update_heightmap" />
+  </component>
+</project>
