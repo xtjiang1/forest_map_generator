@@ -1,4 +1,4 @@
-# forest_map_generator (ROS2 + Gazebo Fortress)
+# forest_map_generator (ROS2 Humble + Gazebo Fortress)
 
 A ROS 2 package for generating forest simulation environments in Gazebo Fortress, including
 terrain heightmaps, procedural tree placement, and road mesh generation.
@@ -82,5 +82,86 @@ forest_map_generator/
 ```text
 forest_map_generator/forest_map_generator.py
 ```
+
+**Role**
+Primary ROS 2 node that procedurally generates a forest simulation world by injecting trees (and optionally roads) into a base Gazebo world.
+The node samples valid placements directly on the terrain heightmap, converts heightmap pixels into world-frame poses, and writes a new .world file under worlds/.
+
+**Execution Flow**
+1. Load the terrain heightmap and compute local slope information
+2. Sample valid tree positions subject to slope and distance constraints
+3. Convert heightmap pixels to world-frame poses
+4. Inject generated tree instances into a new Gazebo world file
+
+**Launch Command**
+```text
+ros2 launch forest_map_generator tree_generator.launch.py
+```
+
+The node writes a generated world file to the package worlds/ directory (see output_world_file below).
+
+**Paraments**
+
+| Parameter | Type | Description |
+|----------|------|-------------|
+| `heightmap_file` | `string` | Heightmap image filename under `models/terrain/heightmaps/`. Used for terrain elevation lookup and slope computation. |
+| `num_trees` | `int` | Number of trees to generate and inject into the world. |
+| `tree_types` | `list[string]` | List of Gazebo model names available under `models/` (e.g., `tree1`–`tree14`). A random type is selected per placement. |
+| `terrain_size_x` | `int` | Heightmap resolution in X (pixels). Must match the heightmap image width. |
+| `terrain_size_y` | `int` | Heightmap resolution in Y (pixels). Must match the heightmap image height. |
+| `terrain_size_z` | `float` | Terrain vertical scale in meters used to convert heightmap values to world Z. |
+| `min_tree_distance` | `float` | Minimum allowed distance (meters) between any two trees. |
+| `max_slope` | `float` | Maximum allowed slope (degrees) for valid placements. Trees are rejected on steep terrain. |
+| `output_world_file` | `string` | Output world filename written to `worlds/` (e.g., `world_with_trees.world`). |
+
+Note: Several of the parameters above are automatically printed during heightmap loading and SDF update for verification and reproducibility.  
+These outputs will be explained in detail in a later section.
+
+**Output**
+```text
+worlds/<output_world_file>
+```
+
+What is written into the world
+
+- A list of Gazebo <include> blocks, one per generated tree instance
+
+- Each instance includes a randomized yaw for visual diversity
+
+- Tree placement is slope-aware and respects minimum spacing constraints
+
+**Assumptions**
+- The terrain model and heightmap are pre-loaded in Gazebo
+- All tree models listed in `tree_types` exist under `models/`
+
+**Example Launch Parameters**
+```text
+Node(
+    package="forest_map_generator",
+    executable="forest_map_generator",
+    name="forest_map_generator",
+    output="screen",
+    parameters=[
+        {
+            "heightmap_file": "heightmap.png",
+            "num_trees": 200,
+            "tree_types": [
+                "tree1","tree2","tree3","tree4","tree5","tree6","tree7",
+                "tree8","tree9","tree10","tree11","tree12","tree13","tree14",
+            ],
+            "terrain_size_x": 257,
+            "terrain_size_y": 257,
+            "terrain_size_z": 50,
+            "min_tree_distance": 5.0,
+            "max_slope": 30.0,
+            "output_world_file": "world_with_trees.world",
+        }
+    ],
+)
+```
+
+**Reproducibility**  
+For fixed parameters and heightmap input, the generation process is stochastic due to randomized tree placement, orientation, and type selection.  
+A fixed random seed is planned to be introduced to enable reproducible map generation for benchmarking and evaluation.
 
 ---

@@ -85,7 +85,17 @@ def main():
     size = f"{w} {h} {args.height_range}"
     pos = f"{args.pos_x} {args.pos_y} {args.pos_z}"
 
-    tree = ET.parse(args.terrain_sdf)
+    terrain_sdf_path = os.path.abspath(args.terrain_sdf)
+
+    print("heightmap:", heightmap_path)
+    print("heightmap_size:", f"{w}x{h}")
+    print("terrain_sdf:", terrain_sdf_path)
+    print("sdf_uri:", uri)
+    print("sdf_size:", size)
+    print("sdf_pos:", pos)
+    print("copy_to:", dst_heightmap)
+
+    tree = ET.parse(terrain_sdf_path)
     root = tree.getroot()
 
     heightmaps = root.findall(".//heightmap")
@@ -102,12 +112,15 @@ def main():
         ensure_single(hm, "pos", pos)
 
     if args.dry_run:
-        print("dry run")
+        print("dry_run: no files modified")
         return
 
-    backup(args.terrain_sdf)
+    bak_path = backup(terrain_sdf_path)
     shutil.copy2(heightmap_path, dst_heightmap)
-    tree.write(args.terrain_sdf, encoding="utf-8", xml_declaration=True)
+    tree.write(terrain_sdf_path, encoding="utf-8", xml_declaration=True)
+
+    print("backup:", bak_path)
+    print("updated_sdf:", terrain_sdf_path)
 
 
 if __name__ == "__main__":
