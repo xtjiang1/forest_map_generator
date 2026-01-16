@@ -17,14 +17,43 @@ This project provides a complete pipeline to build a forest scene for Gazebo fro
 
 The core workflow is:
 
-- `scripts/update_heightmap/main.py` updates `models/terrain/model.sdf` (heightmap URI, size, blend, pose) and copies the PNG into `models/terrain/materials/textures/` so Gazebo can load it.
-- `forest_map_generator/forest_map_generator.py` (ROS 2 node) generates a new `.world` file by inserting:
-  - randomly placed tree `<include>` blocks (slope-aware + minimum distance constraints)
-  - an automatically generated road mesh (`models/road/meshes/road.stl`) and the corresponding road `<include>`
-- `scripts/ply_to_gazebo_textured/main.py` converts `.ply` point clouds into Gazebo-ready tree models under `models/<tree_name>/`:
-  - `meshes/tree_mesh.dae` (visual)
-  - `meshes/tree_collision.stl` (collision)
-  - `meshes/<tree_name>_albedo.png` (texture baked via Blender)
+1) **Acquire a terrain heightmap**
+   - Select a geographic region of interest and export a digital elevation model (DEM) as a heightmap.
+   - Public DEM-to-heightmap services can be used to obtain real-world terrain heightmaps for almost any location worldwide (e.g., https://dx3377.com/dem/heightmap).
+   - Export/download the terrain as a heightmap image and ensure it meets the Gazebo format requirements below.
+
+2) **Prepare a Gazebo-compatible heightmap**
+   - Convert or export the heightmap as a single-channel (grayscale) PNG.
+   - Ensure the heightmap is square and follows Gazebo heightmap requirements (`N × N`, where `N = 2^k + 1`).
+   - Use 8-bit grayscale (`0–255`) unless a higher bit-depth workflow is explicitly required.
+   - Set `terrain_size_x` and `terrain_size_y` to match the actual heightmap resolution.  
+     These values are automatically reported during heightmap loading and terrain/SDF update,
+     and can be verified from the printed image dimensions in the console output.
+
+3) **Update the terrain model**
+   - `scripts/update_heightmap/main.py` updates `models/terrain/model.sdf`, including:
+     - heightmap URI
+     - heightmap size and vertical scale
+     - texture blending parameters
+     - terrain pose
+   - The script also copies the heightmap PNG into:
+     - `models/terrain/materials/textures/`
+   - This ensures the heightmap is discoverable by Gazebo at runtime.
+
+4) **Generate the forest world**
+   - `forest_map_generator/forest_map_generator.py` (ROS 2 node) generates a new `.world` file by inserting:
+     - randomly placed tree `<include>` blocks (slope-aware and minimum-distance constrained)
+     - an automatically generated road mesh (`models/road/meshes/road.stl`) and the corresponding road `<include>`
+   - Tree and road placement are evaluated directly on the heightmap using shared terrain logic.
+
+5) **Create Gazebo-ready tree models from point clouds (optional)**
+   - `scripts/ply_to_gazebo_textured/main.py` converts colored `.ply` point clouds into Gazebo-ready tree models under `models/<tree_name>/`, including:
+     - `meshes/tree_mesh.dae` (visual mesh)
+     - `meshes/tree_collision.stl` (collision mesh)
+     - `meshes/<tree_name>_albedo.png` (texture baked via Blender)
+
+This pipeline enables reproducible construction of large-scale forest environments in Gazebo from either synthetic or real-world terrain data.
+
 
 The package is structured as an `ament_python` ROS 2 package and is intended for research workflows where repeatable generation of natural outdoor scenes is required.
 
@@ -90,6 +119,7 @@ forest_map_generator/forest_map_generator.py
 ```
 
 **Role**
+
 Primary ROS 2 node that procedurally generates a forest simulation world by injecting trees (and optionally roads) into a base Gazebo world.
 The node samples valid placements directly on the terrain heightmap, converts heightmap pixels into world-frame poses, and writes a new .world file under worlds/.
 
