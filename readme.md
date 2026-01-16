@@ -44,7 +44,7 @@ forest_map_generator/
 │   │
 │   └── ply_to_gazebo_textured/
 │       ├── main.py                    # PLY → Gazebo tree model pipeline
-│       └── bake_vcol_to_texture.py    # Blender texture baking
+│       └── bake_vcol_to_texture.py    # Blender texture baking (called by main.py)
 │
 ├── models/
 │   ├── terrain/                       # Heightmap-based terrain model
@@ -64,6 +64,7 @@ forest_map_generator/
     └── images/
         └── gazebo_overview.png
 
+```
 
 ---
 
