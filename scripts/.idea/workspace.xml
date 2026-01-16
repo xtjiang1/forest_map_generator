@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d3009a1-cfc9-4f3e-999e-49c5d64a71b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update_heightmap/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/update_heightmap/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +110,7 @@
       <workItem from="1768506718020" duration="824000" />
       <workItem from="1768508553137" duration="13000" />
       <workItem from="1768586774472" duration="27000" />
+      <workItem from="1768591288640" duration="17000" />
     </task>
     <servers />
   </component>
@@ -119,6 +118,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scripts$main.coverage" NAME="main Coverage Results" MODIFIED="1768586786905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/update_heightmap" />
+    <SUITE FILE_PATH="coverage/scripts$main.coverage" NAME="main Coverage Results" MODIFIED="1768591298017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/update_heightmap" />
   </component>
 </project>
