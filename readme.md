@@ -70,11 +70,17 @@ forest_map_generator/
 
 ## Key Components
 
-- `ForestMapGenerator` (ROS 2 node): generates a new world file by injecting trees and roads into a base world.
-- `TreeGenerator`: slope-aware random tree placement on the heightmap.
-- `RoadGenerator`: generates a smooth road mesh (`road.stl`) while respecting slope and tree clearance.
-- `update_heightmap` script: updates terrain SDF parameters and ensures the heightmap image is in the correct model path for Gazebo.
-- `ply_to_gazebo_textured` pipeline: converts colored point clouds into textured meshes using Open3D + Blender baking.
+- 'ForestMapGenerator (ROS 2 node)': generates a new world file by injecting trees and roads into a base world.
+
+- 'TerrainHelper': shared utility class for heightmap loading, pixel–world coordinate conversion, and terrain slope computation.
+
+- 'TreeGenerator': slope-aware random tree placement on the heightmap, built on top of TerrainHelper.
+
+- 'RoadGenerator': generates a smooth road mesh (road.stl) while respecting terrain slope and minimum clearance from trees.
+
+- 'update_heightmap script': updates terrain SDF parameters and ensures the heightmap image is placed in the correct model path for Gazebo.
+
+- 'ply_to_gazebo_textured pipeline': converts colored point clouds into textured Gazebo-ready meshes using Open3D and Blender texture baking.
 
 ### 1. ForestMapGenerator (ROS 2 Node)
 
@@ -163,5 +169,83 @@ Node(
 **Reproducibility**  
 For fixed parameters and heightmap input, the generation process is stochastic due to randomized tree placement, orientation, and type selection.  
 A fixed random seed is planned to be introduced to enable reproducible map generation for benchmarking and evaluation.
+
+### 2. TerrainHelper (Terrain Abstraction Layer)
+
+**Location**
+```text
+forest_map_generator/forest_map_generator.py
+```
+
+**Role**
+`TerrainHelper` is a shared utility class that encapsulates all terrain-related operations, providing a consistent abstraction over the heightmap-based terrain model used in Gazebo.
+
+It serves as the geometric and physical foundation for both tree and road generation by:
+
+- loading and validating the terrain heightmap,
+
+- computing local terrain slope,
+
+- converting between heightmap pixel coordinates and world-frame coordinates.
+
+By centralizing these operations, `TerrainHelper` ensures that terrain assumptions (scale, orientation, slope limits) remain consistent across different procedural components.
+
+**Responsibilities**
+
+- **Heightmap loading**
+  - Loads grayscale PNG heightmaps from  
+    `models/terrain/heightmaps/<heightmap_file>`
+  - Converts pixel values into floating-point elevation data
+  - Reports image dimensions and value range for verification
+
+- **Slope computation**
+  - Estimates local terrain slope using finite differences on the heightmap
+  - Computes slope angle in degrees from heightmap gradients
+  - Enforces a maximum allowable slope (`max_slope`) for placement validity
+
+- **Coordinate conversion**
+  - Maps heightmap pixel coordinates `(px, py)` to Gazebo world coordinates `(x, y, z)`
+  - Converts world-frame coordinates back to heightmap pixels
+  - Maintains a consistent terrain reference frame shared by all generators
+
+**Methods**
+
+| Method | Description |
+|-------|-------------|
+| `load_heightmap()` | Loads the grayscale heightmap image from disk and caches it as a NumPy array for reuse. |
+| `calculate_scope(px, py)` | Computes the local terrain slope angle (degrees) at the specified heightmap pixel using finite differences. |
+| `pixel_to_world(px, py)` | Converts heightmap pixel coordinates to Gazebo world-frame coordinates `(x, y, z)` using terrain scale parameters. |
+| `world_to_pixel(x, y)` | Converts Gazebo world-frame `(x, y)` coordinates back to heightmap pixel indices. |
+
+**Design Notes**
+
+- Terrain dimensions and scaling are explicitly parameterized using:
+  - `terrain_size_x`, `terrain_size_y` — heightmap resolution
+  - `terrain_size_z` — vertical scale in meters
+- All slope checks for trees and roads rely on the same slope computation logic.
+- Boundary regions of the heightmap are conservatively rejected to avoid invalid gradient estimates.
+
+**Consumers**
+
+`TerrainHelper` is inherited by:
+
+- `TreeGenerator` — for slope-aware tree placement and pixel-to-world coordinate conversion
+- `RoadGenerator` — for slope-constrained path planning and road mesh generation
+
+This design avoids duplicated terrain logic and ensures that all procedural elements are generated under identical terrain constraints.
+
+**Assumptions**
+
+- The heightmap is a single-channel (grayscale) PNG compatible with Gazebo heightmap terrain models.
+- Heightmap resolution matches `terrain_size_x × terrain_size_y`.
+- The terrain model is centered at the world origin with symmetric extents.
+
+**Reproducibility Note**
+
+All geometric computations performed by `TerrainHelper` are deterministic for a fixed heightmap and parameter set.  
+Any non-determinism in the overall generation pipeline originates from higher-level sampling logic
+(e.g., random tree placement and orientation).
+
+
 
 ---
