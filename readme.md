@@ -32,26 +32,37 @@ The package is structured as an `ament_python` ROS 2 package and is intended for
 
 ## Repository Layout
 
+
+```text
 forest_map_generator/
 ├── forest_map_generator/
-│ └── forest_map_generator.py
+│   └── forest_map_generator.py        # ROS 2 node (tree & road generation)
+│
 ├── scripts/
-│ ├── update_heightmap/
-│ │ └── main.py
-│ └── ply_to_gazebo_textured/
-│ ├── main.py
-│ └── bake_vcol_to_texture.py
+│   ├── update_heightmap/
+│   │   └── main.py                    # Heightmap → terrain SDF update
+│   │
+│   └── ply_to_gazebo_textured/
+│       ├── main.py                    # PLY → Gazebo tree model pipeline
+│       └── bake_vcol_to_texture.py    # Blender texture baking
+│
 ├── models/
-│ ├── terrain/
-│ ├── road/
-│ ├── oak_tree/ pine_tree/
-│ └── tree*/
+│   ├── terrain/                       # Heightmap-based terrain model
+│   ├── road/                          # Generated road model
+│   ├── oak_tree/                      # Predefined tree model
+│   ├── pine_tree/                     # Predefined tree model
+│   └── tree*/                         # Auto-generated tree instances
+│
 ├── worlds/
-│ └── world.world
+│   └── world.world                    # Base Gazebo world
+│
 ├── launch/
-│ ├── gazebo.launch.py
-│ └── tree_generator.launch.py
-└── docs/images/gazebo_overview.png
+│   ├── gazebo.launch.py
+│   └── tree_generator.launch.py
+│
+└── docs/
+    └── images/
+        └── gazebo_overview.png
 
 
 ---
