@@ -1,6 +1,6 @@
-# forest_map_generator (ROS 2)
+# forest_map_generator (ROS2 + Gazebo Fortress)
 
-A ROS 2 package for generating forest simulation environments in Gazebo, including
+A ROS 2 package for generating forest simulation environments in Gazebo Fortress, including
 terrain heightmaps, procedural tree placement, and road mesh generation.
 
 <p align="center">
@@ -75,5 +75,12 @@ forest_map_generator/
 - `RoadGenerator`: generates a smooth road mesh (`road.stl`) while respecting slope and tree clearance.
 - `update_heightmap` script: updates terrain SDF parameters and ensures the heightmap image is in the correct model path for Gazebo.
 - `ply_to_gazebo_textured` pipeline: converts colored point clouds into textured meshes using Open3D + Blender baking.
+
+### 1. ForestMapGenerator (ROS 2 Node)
+
+**Location**
+```text
+forest_map_generator/forest_map_generator.py
+```
 
 ---
